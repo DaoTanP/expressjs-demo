@@ -1,20 +1,18 @@
 const express = require('express');
 const { generateAccessToken } = require('../middlewares/auth');
+const checkUser = require('../middlewares/checkUser');
 const router = express.Router();
 
-router.post('/login', (req, res) => {
-    const users = require('../data.json').users;
-    user = users.find(u => u.username === req.body.username && u.password === req.body.password);
-
-    if (user) {
+router.post('/login', checkUser, (req, res) => {
+    if (req.user) {
         // Generate an access token
-        const accessToken = generateAccessToken(user.username);
+        const accessToken = generateAccessToken(req.user.username);
 
         res.json({
             accessToken
         });
     } else {
-        res.send('Username or password incorrect');
+        res.send('Can not process request');
     }
 });
 

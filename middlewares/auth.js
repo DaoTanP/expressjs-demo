@@ -8,9 +8,9 @@ const dotenv = require('dotenv');
 // get config vars
 dotenv.config();
 
-// expires in 30 minutes
+// expires in 30s
 function generateAccessToken(username) {
-    return jwt.sign({ username: username }, process.env.SERVER_TOKEN, { expiresIn: 18 });
+    return jwt.sign({ username: username }, process.env.SERVER_TOKEN, { expiresIn: 30 });
 }
 
 function authenticateToken(req, res, next) {

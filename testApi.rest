@@ -6,11 +6,11 @@ POST http://localhost:3000/users/login
 Content-Type: application/json
 
 {
-    "username": "atuny0",
-    "password": "9uQFF1Lh"
+    "username": "hbingley1",
+    "password": "CQutx25i8r"
 }
 
 ###
 
-GET http://localhost:3000/products/5
-Authorization: Bearer 
+GET http://localhost:3000/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImhiaW5nbGV5MSIsImlhdCI6MTY5NjkwNjI3NiwiZXhwIjoxNjk2OTA2MzA2fQ.cuYlASF355qA5O3qe4Zt5Qe765TlqKTiDxDWF7Er5-M

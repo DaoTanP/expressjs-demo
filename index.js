@@ -4,6 +4,7 @@ const app = express();
 app.use(express.json());
 
 app.get("/", (req, res) => {
+    console.log("get index page");
     res.send("Hello, world!");
 });
 
